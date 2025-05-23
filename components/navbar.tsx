@@ -4,18 +4,11 @@ import React, { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import Image from "next/image";
-import { motion } from "framer-motion"; // Add motion back
+import { motion } from "framer-motion";
 
 import "../styles/components/_navbar.scss";
 
-// --- CONFIGURATION CONSTANTS (Responsive) ---
-// const NAVBAR_BAR_HEIGHT_VW = 5; // Defined in SCSS
-
-// THIS IS THE KEY CHANGE FOR INITIAL LOGO SIZE
-const LOGO_INITIAL_BASE_SIZE_VW = 100; // Base size of the logo div: 100vw for full viewport width
-
-// const LOGO_FINAL_VISUAL_SIZE_VW = 4; // We'll define this when we add animation
-// -----
+const LOGO_INITIAL_BASE_SIZE_VW = 100;
 
 const Navbar = () => {
     const pathname = usePathname();
@@ -26,7 +19,6 @@ const Navbar = () => {
 
     return (
         <>
-            {/* 1. The Fixed Navbar Bar (remains the same) */}
             <nav className="navbar-bar">
                 <div className="navbar-links-section navbar-links-left">
                     <Link href="/" className={pathname === "/" || pathname === "/home" ? "active" : ""}>
@@ -54,17 +46,12 @@ const Navbar = () => {
                 </div>
             </nav>
 
-            {/* 2. Outer container for stable initial 60vh positioning */}
             <motion.div className="logo-initial-positioner">
-                {/* 3. The actual logo div, child of the positioner */}
                 <motion.div
                     className="animated-logo"
                     style={{
-                        // Set base size for the unscaled logo
-                        width: `${LOGO_INITIAL_BASE_SIZE_VW}vw`, // Now 100vw
-                        height: `${LOGO_INITIAL_BASE_SIZE_VW}vw`,// Now 100vw (making it a square viewport container)
-                                                                // If your SVG is not square, object-fit:contain will handle it
-                        // NO 'scale' or 'y' animation YET
+                        width: `${LOGO_INITIAL_BASE_SIZE_VW}vw`,
+                        height: `${LOGO_INITIAL_BASE_SIZE_VW}vw`,
                     }}
                 >
                     <Image src="/uu06.svg" fill alt="Company Logo" priority />
