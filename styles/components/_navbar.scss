@@ -2,12 +2,11 @@
 @import '../abstracts/variables';
 @import '../abstracts/mixins';
 
-// --- CONFIGURATION VARIABLES (Responsive) ---
+// These MUST match the _CONFIG constants in Navbar.tsx
 $navbar-bar-height-vw: 5vw;
 $navbar-min-height-px: 50px;
 $navbar-max-height-px: 80px;
-$logo-final-visual-size-for-spacer-vw: 4vw; // Target visual size after scaling
-// -----
+$logo-final-visual-size-for-spacer-vw: 10vw; // Should match LOGO_FINAL_VISUAL_SIZE_VW_CONFIG
 
 .navbar-bar {
   position: fixed;
@@ -17,20 +16,19 @@ $logo-final-visual-size-for-spacer-vw: 4vw; // Target visual size after scaling
   height: $navbar-bar-height-vw;
   min-height: $navbar-min-height-px;
   max-height: $navbar-max-height-px;
-  background-color: $white;
+  background-color: $white; // Ensure $white is defined
   backdrop-filter: blur(10px);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0 2vw;
+  padding: 0 1rem;
   z-index: 1000;
   box-sizing: border-box;
 
   .navbar-links-section {
     display: flex;
     align-items: center;
-    gap: 1.5vw; // <<<< ADDED/ENSURED THIS GAP IS PRESENT AND EFFECTIVE
-                // Or use a fixed pixel value if vw is too small on narrow screens e.g., gap: 15px;
+    gap: 1.5vw;
     flex: 1;
   }
   .navbar-links-left { justify-content: flex-start; }
@@ -43,13 +41,13 @@ $logo-final-visual-size-for-spacer-vw: 4vw; // Target visual size after scaling
 
   > .navbar-links-section > a,
   > .navbar-links-section > .dropdown > .dropdown-trigger {
-    @include navLink;
+    @include navLink; // Ensure this mixin is defined
   }
 }
 
 .logo-initial-positioner {
   position: fixed;
-  top: 60vh;
+  top: 80vh;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 1001;
@@ -59,17 +57,17 @@ $logo-final-visual-size-for-spacer-vw: 4vw; // Target visual size after scaling
 }
 
 .animated-logo {
-  display: flex; // Good for centering the Image child if needed, though fill should handle it
+  display: flex;
   justify-content: center;
   align-items: center;
-  position: relative; // <<<< ADDED: Required for Next/Image with fill prop to work correctly.
-                      // This makes .animated-logo the containing block for the fill Image.
-  // width and height are set by inline styles in React
+  position: relative;
+  will-change: transform;
+
   img {
-    object-fit: contain !important; // Ensures the image scales within its bounds without cropping aspect ratio
+    object-fit: contain !important;
     display: block;
   }
 }
 
-// YOUR SEPARATE DROPDOWN SCSS
+// Your separate SCSS file handles dropdown styles.
 // Ensure .dropdown-menu has z-index > 1001 (e.g., 1002)
