@@ -1,0 +1,94 @@
+@import './variables';
+
+// Base button style
+@mixin buttonStyle {
+    width: fit-content;
+    height: fit-content;
+    background-color: $gray;
+    color: $black;
+    border: none;
+    padding: 0.5rem 1.25rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: $font-size-small;
+    font-weight: $font-weight-regular;
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
+    letter-spacing: $letter-spacing-small;
+    transition: all 0.3s ease;
+
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+// Button variants
+@mixin buttonPrimary {
+    @include buttonStyle;
+    background-color: $black;
+    color: $white;
+    
+    &:hover {
+        background-color: darken($black, 10%);
+        color: $white;
+    }
+}
+
+@mixin buttonSecondary {
+    @include buttonStyle;
+    background-color: transparent;
+    border: 1px solid $black;
+    
+    &:hover {
+        background-color: $black;
+        color: $white;
+    }
+}
+
+@mixin buttonOutline {
+    @include buttonStyle;
+    background-color: transparent;
+    border: 1px solid $gray;
+    
+    &:hover {
+        background-color: $gray;
+        color: $black;
+    }
+}
+
+@mixin buttonGhost {
+    @include buttonStyle;
+    background-color: transparent;
+    color: $black;
+    
+    &:hover {
+        background-color: rgba($black, 0.1);
+    }
+}
+
+@mixin buttonDanger {
+    @include buttonStyle;
+    background-color: $red;
+    color: $white;
+    
+    &:hover {
+        background-color: darken($red, 10%);
+    }
+}
+
+// Button sizes
+@mixin buttonSmall {
+    padding: 0.25rem 0.5rem;
+    font-size: $font-size-x-small;
+}
+
+@mixin buttonMedium {
+    padding: 0.5rem 1rem;
+    font-size: $font-size-small;
+}
+
+@mixin buttonLarge {
+    padding: 0.75rem 1.5rem;
+    font-size: $font-size-regular;
+} 

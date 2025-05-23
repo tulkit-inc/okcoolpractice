@@ -1,0 +1,68 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+@import '../abstracts/animations';
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+
+    .dropdown-trigger {
+        color: $black;
+        font-size: .875rem;
+        font-weight: $font-weight-regular;
+        font-family: $font-family-sans-serif;
+        text-transform: uppercase;
+        letter-spacing: .01rem;
+        background: none;
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        position: relative;
+        padding-right: 1em;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &::after {
+            content: '▼';
+            font-size: 0.6em;
+            position: absolute;
+            right: 0;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+    }
+
+    .chevron {
+        display: none;
+    }
+
+    .dropdown-menu {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        background-color: $white;
+        min-width: 200px;
+        border-radius: 4px;
+        padding: 0.5rem 0;
+        z-index: 1000;
+        animation: dropdownFadeIn 0.2s ease;
+
+        a {
+            display: block;
+            padding: 0.25rem 0rem;
+            text-decoration: none;
+            color: $black;
+            transition: background-color 0.2s ease;
+
+            &:hover {
+                text-decoration: underline;
+                text-underline-offset: 8px;
+                text-decoration-thickness: 2px;
+                text-decoration-color: $black;
+                text-decoration-style: solid;
+                text-decoration-skip-ink: none;
+                text-decoration-skip: none;
+            }
+        }
+    }
+} 

@@ -1,0 +1,23 @@
+@import './variables';
+
+// Navigation link mixin
+@mixin navLink {
+    color: $black;
+    text-decoration: none;
+    font-size: .875rem;
+    font-weight: $font-weight-regular;
+    font-family: $font-family-sans-serif;
+    text-transform: uppercase;
+    letter-spacing: .01rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+        text-decoration: underline;
+        text-underline-offset: 8px;
+        text-decoration-thickness: 2px;
+        text-decoration-color: $black;
+        text-decoration-style: solid;
+        text-decoration-skip-ink: none;
+        text-decoration-skip: none;
+    }
+} 

@@ -1,0 +1,75 @@
+@import '../abstracts/variables';
+@import '../abstracts/mixins';
+
+.navbar {
+    width: 100%;
+    background-color: $white;
+    color: $black;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-top;
+    padding: 1rem;
+    top: 0;
+    z-index: 1000;
+    backdrop-filter: blur(8px);
+
+    .navbar-left {
+        display: flex;
+        gap: 20px;
+        position: fixed;
+        left: 0;
+    }
+    
+    .navbar-right {
+        display: flex;
+        gap: 20px;
+        position: fixed;
+        right: 0;
+    }
+
+    a {
+        @include navLink;
+
+        &.active {
+            text-decoration: none;
+            font-weight: $font-weight-medium;
+            pointer-events: none;
+        }
+    }
+
+    
+} 
+
+.navbar-logo-container {
+    height: 100vh;
+    position:relative;
+
+    .sticky {
+        position: sticky;
+        top: 0;
+        height: 50vh;
+        background-color: orange;
+    }
+
+    .el {
+        width: 100vw;
+        height: 100vh;
+        position: absolute;
+        top: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .logo {
+            width: 100vw;
+            height: 100vh;
+            position: relative;
+    
+            img {
+                object-fit: contain;
+            }
+        }
+    }
+
+    
+}

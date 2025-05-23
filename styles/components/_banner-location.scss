@@ -1,0 +1,20 @@
+@import '../abstracts/variables';
+
+.banner-location {
+    position: fixed;
+    bottom: 3vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+
+    .location {
+        font-size: 1rem;
+        font-weight: $font-weight-regular;
+        font-family: $font-family-serif;
+        letter-spacing: .01rem;
+        color: $black;
+    }
+}

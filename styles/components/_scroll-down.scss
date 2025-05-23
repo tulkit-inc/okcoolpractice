@@ -1,0 +1,26 @@
+@import '../abstracts/variables';
+
+.scroll-down {
+    font-size: .875rem;
+    border-style: solid;
+    border-width: 1px;
+    border-color: $black;
+    cursor: pointer;
+    border-radius: 100px;
+    padding: 1px 10px;
+    position:fixed;
+    bottom: 4.5rem;
+    left: calc(50% - 1.5rem);
+    z-index: 1000;
+
+    .scroll-down-text {
+        font-family: $font-family-sans-serif;
+        font-weight: $font-weight-regular;
+        letter-spacing: .01rem;
+        text-transform: uppercase;
+        color: $black;
+        text-decoration: none;
+        transition: all 0.3s ease;
+    }
+    
+}

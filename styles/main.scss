@@ -1,0 +1,22 @@
+// Abstracts
+@import './abstracts/variables';
+@import './abstracts/typography';
+@import './abstracts/mixins';
+@import './abstracts/button-mixins';
+@import './abstracts/animations';
+
+// Base styles
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: $white;
+    margin-bottom: 100vh;
+}
+
+// Components
+@import './components/navbar';
+@import './components/dropdown';
+
+// Sections
+@import './sections/hero';
