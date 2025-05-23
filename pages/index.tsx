@@ -5,12 +5,16 @@ import "../styles/components/_scroll-down.scss";
 import "../styles/abstracts/_animations.scss";
 import "../styles/components/_banner-location.scss";
 
+
+const NAVBAR_HEIGHT = '60px'; 
+
+
 export default function Home() {
 
   
 
   return (
-   <div className="home">
+    <div className="home" style={{ paddingTop: NAVBAR_HEIGHT, minHeight: '200vh' /* For scroll testing */ }}>
     <Navbar />
     <section className="hero">
       <h1 className="h2">
@@ -34,6 +38,11 @@ export default function Home() {
         <div className="location"> Los Angeles</div>
       </div>
       
+      
+    </section>
+
+    <section style={{ height: '100vh', background: 'lightcyan', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+      <h2>Some More Content Below Hero</h2>
     </section>
 
     
