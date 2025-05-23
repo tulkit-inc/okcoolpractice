@@ -1,0 +1,65 @@
+// Project page styles
+@import '../abstracts/variables';
+@import '../abstracts/typography';
+@import '../abstracts/mixins';
+@import '../abstracts/button-mixins';
+@import '../abstracts/animations';
+
+.project {
+  &__container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+  }
+
+  &__header {
+    margin-bottom: 2rem;
+
+    h1 {
+      font-family: $font-family-sans-serif;
+      text-transform: uppercase;
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+  }
+
+  &__title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+  }
+
+  &__content {
+    width: 100%;
+    display: grid;
+    gap: 2rem;
+  }
+
+  // Responsive styles
+  @media (max-width: 768px) {
+    &__container {
+      padding: 1rem;
+    }
+
+    &__title {
+      font-size: 2rem;
+    }
+  }
+
+  &__imageContainer {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    margin-bottom: 2rem;
+  
+    &__image {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}
+
+// You can add more specific styles for your project page components here 

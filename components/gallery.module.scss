@@ -1,0 +1,85 @@
+@import '../styles/abstracts/variables.scss';
+
+
+.gallery {
+    padding: 2rem; 
+  }
+  
+  
+  .proyectColumns {
+    display: grid;
+    grid-template-columns: 1fr 1fr; // Two equal-width columns
+    gap: 4rem; 
+  }
+  
+  .column {
+    display: flex;
+    flex-direction: column;
+  }
+  
+
+  .proyectCard {
+    background-color: $white;       
+    margin-bottom: 4rem;         
+    overflow: hidden;             
+    display: flex;                 
+    flex-direction: column;        
+  
+    &:last-child {
+      margin-bottom: 0;
+    }
+  
+
+  }
+  
+
+  .proyectCardImage {
+    width: 100%;
+    position: relative; 
+  
+    img { 
+      display: block;       
+      width: 100%;          
+      height: auto;         
+    }
+  
+  }
+  
+  .proyectCardTitle {
+    padding: 1rem 0rem;        
+    background-color:$white; 
+    font-family: $font-family-sans-serif;
+  
+    h3 {
+      margin: 0;                 
+      font-size: $font-size-regular;       
+      font-weight: $font-weight-regular;     
+      color: $black;              
+      text-transform: uppercase;        
+    }
+  }
+  
+
+  @media (max-width: 768px) { 
+  
+    .proyectColumns {
+      grid-template-columns: 1fr; 
+      gap: 1.5rem; 
+    }
+  
+    .proyectCard {
+      margin-bottom: 1.5rem; 
+  
+      &:last-child {
+        margin-bottom: 0; 
+      }
+    }
+  
+    .proyectCardTitle {
+      padding: 0.75rem 1rem; 
+  
+      h3 {
+        font-size: 1rem; 
+      }
+    }
+  }

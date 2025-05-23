@@ -89,9 +89,9 @@ const Navbar: React.FC = () => {
         animate={isScrolled ? 'scrolled' : 'initial'}
         transition={{ type: 'spring', stiffness: 100, damping: 20, duration: 0.6 }}
       >
-        <Link href="/" className={styles.logoLinkWrapper}>
+        <div className={styles.logoLinkWrapper}>
           <OKCoolSVGLogo />
-        </Link>
+        </div>
       </motion.div>
 
       <div className={styles.socialIcons}>
