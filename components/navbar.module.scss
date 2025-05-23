@@ -1,0 +1,79 @@
+// components/Navbar/Navbar.module.scss
+
+$navbar-padding-y: 20px;
+$navbar-padding-x: 30px;
+$scrolled-logo-font-size: 1.8rem;
+$initial-logo-font-size: 10vw;
+$nav-link-font-size: 0.9rem;
+$text-color: #000;
+$background-color: #fff; // Not used directly on navbar, but good for context
+
+.navbar {
+  // This is just a logical wrapper, no direct visual style needed
+}
+
+.logoContainer {
+  position: fixed;
+  z-index: 1001; // Ensures logo is on top if elements could overlap during its animation
+  will-change: transform, font-size, top, left;
+}
+
+.logoLink {
+  text-decoration: none;
+  color: $text-color;
+  font-weight: bold;
+  line-height: 0.8; // Keep the logo text compact
+  display: inline-block; // Important for proper sizing and behavior
+}
+
+.navItemsContainer {
+  position: fixed;
+  top: $navbar-padding-y;    // Static position from the top
+  left: $navbar-padding-x;   // Static position from the left
+  display: flex;             // Lay out list items in a row
+  align-items: center;       // Vertically center items within this container
+  // Ensure its height allows for good vertical alignment with the scrolled logo
+  height: calc(#{$scrolled-logo-font-size} * 1.5); // Adjust multiplier for best visual alignment
+  z-index: 1000;             // Standard layer, below logo if they overlap
+  padding: 0;
+  margin: 0;
+  list-style: none;
+  opacity: 1;                // Always visible
+
+  li {
+    margin-right: 25px;
+    &:last-child {
+      margin-right: 0;
+    }
+    a {
+      text-decoration: none;
+      color: $text-color;
+      font-size: $nav-link-font-size;
+      font-weight: 500;
+      transition: color 0.2s ease;
+      &:hover {
+        color: darken($text-color, 20%);
+      }
+    }
+  }
+}
+
+.socialIcons {
+  position: fixed;
+  top: $navbar-padding-y;
+  right: $navbar-padding-x;
+  display: flex;
+  align-items: center;
+  // Ensure its height allows for good vertical alignment with the scrolled logo
+  height: calc(#{$scrolled-logo-font-size} * 1.5); // Adjust multiplier for best visual alignment
+  z-index: 1000;
+  opacity: 1; // Always visible
+
+  a {
+    margin-left: 15px;
+    color: $text-color;
+    font-size: 1.2rem; // Adjust as needed
+    text-decoration: none;
+    font-family: sans-serif; // Or your icon font
+  }
+}

@@ -11,8 +11,6 @@ const NAVBAR_HEIGHT = '60px';
 
 export default function Home() {
 
-  
-
   return (
     <div className="home" style={{ paddingTop: NAVBAR_HEIGHT, minHeight: '200vh' /* For scroll testing */ }}>
     <Navbar />
@@ -27,8 +25,10 @@ export default function Home() {
         <button className="button-secondary">View work</button>
       </div>
 
-      <div className="scroll-down bounce">
-         <div className="scroll-down-text">SCROLL</div>
+      <div className="scroll-down-container"> 
+        <div className="scroll-down bounce">
+           <div className="scroll-down-text">SCROLL</div>
+        </div>
       </div>
 
       <div className="banner-location">

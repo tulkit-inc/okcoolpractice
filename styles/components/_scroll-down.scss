@@ -1,5 +1,18 @@
 @import '../abstracts/variables';
 
+
+.scroll-down-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position:fixed;
+    bottom: 4.5rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
 .scroll-down {
     font-size: .875rem;
     border-style: solid;
@@ -8,9 +21,8 @@
     cursor: pointer;
     border-radius: 100px;
     padding: 1px 10px;
-    position:fixed;
-    bottom: 4.5rem;
-    left: calc(50% - 1.5rem);
+
+
     z-index: 1000;
 
     .scroll-down-text {
